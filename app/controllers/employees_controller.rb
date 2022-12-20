@@ -49,7 +49,7 @@ class EmployeesController < ApplicationController
 
   # DELETE /employees/1 or /employees/1.json
   def destroy
-    @employee.destroy
+    @employee.suspended
 
     respond_to do |format|
       format.html { redirect_to employees_url, notice: "Employee was successfully destroyed." }
