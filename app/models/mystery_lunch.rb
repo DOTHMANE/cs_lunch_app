@@ -1,5 +1,5 @@
 class MysteryLunch < ApplicationRecord
-  has_many :mystery_lunch_employee_relation
+  has_many :mystery_lunch_employee_relation, dependent: :destroy
   has_many :employees, through: :mystery_lunch_employee_relation
 
   scope :current_month, -> { where('created_at <= ? AND created_at >= ?', Time.now.end_of_month, Time.now.beginning_of_month) }
