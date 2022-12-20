@@ -13,7 +13,7 @@ class Employee < ApplicationRecord
   scope :active, -> { where(status: 1) }
 
   def assign_new_employee
-    MysLunch.assign_odd_employee(self)
+    MysteryLunch.assign_odd_employee(self)
   end
 
   private
