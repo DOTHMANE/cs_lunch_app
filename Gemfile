@@ -44,6 +44,11 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.2.2'
 gem 'devise'
 
+
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
