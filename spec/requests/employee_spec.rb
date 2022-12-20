@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "Employees", type: :request do
   let(:department) { create(:department) }
+  let(:user) { create(:user, password: 'password') }
+
+  before do
+    sign_in user
+  end
 
   describe "GET /index" do
     it "renders the index template" do
