@@ -41,4 +41,12 @@ RSpec.describe Employee, type: :model do
       expect(employee.mystery_lunches.count).to eq(1)
     end
   end
+
+  describe '.add_default_cover' do
+    it 'sets a default photo to employees' do
+      employee.send(:add_default_cover)
+      binding.pry
+      expect(employee.reload.photo.attached?).to eq(true)
+    end
+  end
 end
