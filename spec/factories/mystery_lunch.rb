@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :employee do
+  factory :mystery_lunch do
   end
 end
 
