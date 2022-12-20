@@ -1,0 +1,12 @@
+# config/sidekiq_scheduler.yml
+
+default: &default
+  mystery_lunch_worker:
+    class: MysteryLunchWorker
+    cron: "0 12 1 * *" # Runs the first of every month
+
+development:
+  <<: *default
+
+production:
+  <<: *default
