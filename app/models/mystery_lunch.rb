@@ -6,6 +6,7 @@ class MysteryLunch < ApplicationRecord
 
   def self.assign_odd_employee(employee)
     return unless employee.present?
+
     current_month.each do |lunch|
       next if lunch.full?
       next if lunch.employees.pluck(:department_id).include? employee.department.id

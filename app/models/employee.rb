@@ -8,8 +8,13 @@ class Employee < ApplicationRecord
   validates :name, presence: true
 
   after_commit :add_default_cover, on: [:create]
+  after_create :assign_new_employee
 
   scope :active, -> { where(status: 1) }
+
+  def assign_new_employee
+    MysteryLunch.assign_odd_employee(self)
+  end
 
   private
 
