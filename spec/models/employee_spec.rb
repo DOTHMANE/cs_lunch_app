@@ -53,8 +53,26 @@ RSpec.describe Employee, type: :model do
   describe '.assign_new_employee' do
     it 'assigns new employee to a mystery lunch' do
       new_employee = create(:employee, department: create(:department))
+      new_employee.send(:assign_new_employee)
 
       expect(new_employee.reload.mystery_lunches.count).to eq(1)
+    end
+  end
+
+  describe '.assign_partner' do
+    let!(:employee_c) { create(:employee, department: create(:department)) }
+    let!(:employee_d) { create(:employee, department: create(:department)) }
+    let!(:mystery_lunch_b) { create(:mystery_lunch) }
+    let!(:lunch_employee_c) { create(:mystery_lunch_employee_relation, employee: employee_c, mystery_lunch: mystery_lunch_b) }
+    let!(:lunch_employee_d) { create(:mystery_lunch_employee_relation, employee: employee_d, mystery_lunch: mystery_lunch_b) }
+
+
+    it 'assigns employee partner to a mystery lunch' do
+      employee_b.update!(status: 0)
+      employee_b.send(:assign_partner)
+
+      expect(employee.reload.mystery_lunches.count).to eq(1)
+      expect(mystery_lunch_b.reload.full?).to eq(true)
     end
   end
 end
