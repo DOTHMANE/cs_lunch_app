@@ -6,4 +6,6 @@ class Employee < ApplicationRecord
 
   validates :department, presence: true
   validates :name, presence: true
+
+  scope :active, -> { where(status: 1) }
 end
