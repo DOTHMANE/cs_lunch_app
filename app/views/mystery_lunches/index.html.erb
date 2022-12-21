@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mystery Lunches</h1>
+<div id="mystery_lunches">
+  <% @mystery_lunches.each do |mystery_lunch| %>
+    <%= render mystery_lunch %>
+  <% end %>
+</div>
+

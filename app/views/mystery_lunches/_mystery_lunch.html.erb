@@ -1,0 +1,17 @@
+<div id="<%= dom_id mystery_lunch %>">
+  <div class="container text-center border border-success">
+    <div class="row mt-5 mb-5">
+      <% mystery_lunch.employees.each do |employee| %>
+        <div class="col d-flex justify-content-center">
+          <div class="card border border-success" style="width: 18rem;">
+            <%= link_to  image_tag(employee.photo, class: "card-img-top") %>
+            <div class="card-body">
+              <h5 class="card-title"><%= employee.name %></h5>
+              <p class="card-text"><%= employee.department.name %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
