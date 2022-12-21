@@ -3,16 +3,17 @@
 <h1>Mystery Lunches</h1>
 <div id="mystery_lunches">
   <div class="container m-2">
-    <%= form_with url: "/mystery_lunches", method: :get do |form| %>
-      <%= form.select :month, 1..12 %>
+    <% unless @mystery_lunches.empty? %>
+      <%= form_with url: "/mystery_lunches", method: :get do |form| %>
+        <%= form.select :month, 1..12 %>
 
-      <%= form.select :year, Date.today.year.. MysteryLunch.last.created_at.year %>
-    <div>
-      <%= form.button "Filter", type: "submit", :class=> "btn btn-primary" %>
+        <%= form.select :year, Date.today.year.. MysteryLunch.last.created_at.year %>
+        <div>
+          <%= form.button "Filter", type: "submit", :class=> "btn btn-primary" %>
 
-    </div>
+        </div>
+      <% end %>
     <% end %>
-
   </div>
 
 <div class="container m-2">
