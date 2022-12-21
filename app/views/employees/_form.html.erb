@@ -21,6 +21,10 @@
         <%= form.label :department, class: "form-label" %>
         <%= form.collection_select  :department_id, Department.order(:name),:id,:name, {}, { :class=> "form-select form-select-lg mb-3" } %>
       </div>
+      <div class="mb-3">
+        <%= form.label :Photo, class: "form-label" %>
+        <%= form.file_field :photo %>
+      </div>
       <%= form.button "Create", type: "submit", :class=> "btn btn-primary" %>
     </form>
   </div>
