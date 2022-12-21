@@ -14,3 +14,5 @@ Working with the Rails container
 Run docker-compose exec backend bash
 Do everything in the container
 Run tests: rspec
+
+Note: you can sign in with the user mail:'test@gmail.de', password:'12345678'
