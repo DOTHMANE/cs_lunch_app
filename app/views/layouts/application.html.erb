@@ -30,7 +30,7 @@
           <% if user_signed_in? %>
             <%= button_to "Log out", destroy_user_session_path, :method=>'delete', class: 'btn btn-outline-primary'%>
           <% else %>
-            <%= button_to "login", new_user_session_path, class: 'btn btn-outline-primary' %>
+            <%= link_to "login", new_user_session_path, class: 'btn btn-outline-primary' %>
           <% end %>
         </div>
       </div>
