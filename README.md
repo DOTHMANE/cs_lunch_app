@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project contains the Mystery lunch app. This is a Ruby on Rails 7 project.
 
-Things you may want to cover:
+You need: docker & docker-compose ruby 3.1.12
 
-* Ruby version
+Build the environment: docker-compose build
 
-* System dependencies
+Database creation: run docker-compose run backend bundle exec rake db:setup
 
-* Configuration
+Start the environment: docker-compose up
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Working with the Rails container
+Run docker-compose exec backend bash
+Do everything in the container
+Run tests: rspec
