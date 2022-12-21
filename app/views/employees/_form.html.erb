@@ -11,22 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :department_id, style: "display: block" %>
-    <%= form.text_field :department_id %>
-  </div>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.number_field :status %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :department, class: "form-label" %>
+        <%= form.collection_select  :department_id, Department.order(:name),:id,:name, {}, { :class=> "form-select form-select-lg mb-3" } %>
+      </div>
+      <%= form.button "Create", type: "submit", :class=> "btn btn-primary" %>
+    </form>
   </div>
 <% end %>

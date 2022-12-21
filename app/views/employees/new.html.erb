@@ -1,3 +1,5 @@
+<div class="container p-7 mt-5">
+
 <h1>New employee</h1>
 
 <%= render "form", employee: @employee %>
@@ -5,5 +7,6 @@
 <br>
 
 <div>
-  <%= link_to "Back to employees", employees_path %>
+  <%= link_to "Back to employees", employees_path, class: "btn btn-outline-primary" %>
+</div>
 </div>
