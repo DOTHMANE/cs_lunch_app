@@ -3,7 +3,7 @@
 <h1>Mystery Lunches</h1>
 <div id="mystery_lunches">
   <div class="container m-2">
-    <% unless @mystery_lunches.empty? %>
+    <% if MysteryLunch.any? %>
       <%= form_with url: "/mystery_lunches", method: :get do |form| %>
         <%= form.select :month, 1..12 %>
 
