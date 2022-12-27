@@ -3,7 +3,7 @@ require "fugit"
 
 RSpec.describe "sidekiq-scheduler" do
   sidekiq_file = File.join(Rails.root, "config", "sidekiq_scheduler.yml")
-  schedule = YAML.load_file(sidekiq_file)['default']['mystery_lunch_worker']
+  schedule = YAML.load_file(sidekiq_file)['default']
 
   describe "cron syntax" do
       it "#{schedule["cron"]} has correct cron syntax" do
